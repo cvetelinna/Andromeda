@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 public class HomePageActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +23,19 @@ public class HomePageActivity extends AppCompatActivity {
         textView.setText(getString(R.string.welcome_message, username));
 
         Button logoutButton = findViewById(R.id.logout_button);
+
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomePageActivity.this, LogoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button horoscopeButton = findViewById(R.id.horoscope_button);
+        horoscopeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, HoroscopeActivity.class);
                 startActivity(intent);
             }
         });
