@@ -1,79 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/result_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    android:background="@drawable/img"
+    android:gravity="center"
+    tools:context=".HoroscopeActivity">
 
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/background_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:srcCompat="@color/white" />
 
-    android:id="@+id/backgroundImageView"
-    android:id="@+id/promptTextView"
-    android:id="@+id/spinner"
-    android:id="@+id/button"
-    android:id="@+id/resultView"
+        <TextView
+            android:id="@+id/promptTextView"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="53dp"
+            android:layout_marginStart="66dp"
+            android:gravity="center"
+            android:text="@string/prompt_text"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/backgroundImageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/backgroundImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/background_description"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@color/white" />
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="291dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/promptTextView"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="33dp"
+            android:background="@android:color/holo_blue_light"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/backgroundImageView"
+            app:layout_constraintTop_toBottomOf="@+id/promptTextView" />
 
-    <TextView
-        android:id="@+id/promptTextView"
-        android:layout_width="290dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/prompt_text"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/backgroundImageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="160dp"
+            android:background="#FF9800"
+            android:onClick=""
+            android:gravity="center"
+            android:text="@string/submit_button"
+            app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toEndOf="@+id/backgroundImageView"
+            app:layout_constraintTop_toTopOf="@+id/backgroundImageView"
+            tools:ignore="OnClick" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="291dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@android:color/holo_blue_light"
-        android:gravity="center"
-        app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/backgroundImageView"
-        app:layout_constraintTop_toBottomOf="@+id/promptTextView" />
+        <TextView
+            android:id="@+id/resultView"
+            android:layout_width="225dp"
+            android:layout_height="132dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="95dp"
+            android:layout_marginBottom="72dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/button" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="179dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="160dp"
-        android:background="#FF9800"
-        android:onClick=""
-        android:text="@string/submit_button"
-        app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toEndOf="@+id/backgroundImageView"
-        app:layout_constraintTop_toTopOf="@+id/backgroundImageView"
-        tools:ignore="OnClick" />
-
-    <TextView
-        android:id="@+id/resultView"
-        android:layout_width="match_parent"
-        android:layout_height="332dp"
-        android:text="TextView" />
-
-
-</LinearLayout>
+</RelativeLayout>
